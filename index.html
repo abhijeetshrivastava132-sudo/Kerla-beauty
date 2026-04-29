@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Visit Kerala · God's Own Country</title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --kerala-green: #0d9488;
+            --accent-red: #0d9488;
+            --deep-black: #0a0a0a;
+            --glass-bg: rgba(15, 15, 15, 0.65);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #f5f5f5;
+    padding-bottom: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.ibb.co/YFKhFP5D/9c34dfc5f996684dc53a7fb9730d1db0.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px);
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: overlay;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #0d9488;
+}
+
+#alleppeyGallery, #munnarGallery, #varkalaGallery, #wayanadGallery, #kochiGallery {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+        /* Hero parallax */
+        .hero-section {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center 30%;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                background-attachment: scroll;
+                background-position: center 40%;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes gentlePulse {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(13, 148, 36, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 0 20px rgba(220, 38, 38, 0);
+            }
+        }
+
+        @keyframes scrollHint {
+            0%,
+            100% {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+            50% {
+                transform: translateY(12px);
+                opacity: 1;
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-fade-up-delayed {
+            opacity: 0;
+            animation: fadeUp 0.9s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-fade-up-delayed-2 {
+            opacity: 0;
+            animation: fadeUp 0.9s 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1.2s ease forwards;
+        }
+
+        .pulse-red {
+            animation: gentlePulse 2.5s infinite;
+        }
+
+        .scroll-indicator {
+            animation: scrollHint 2s ease-in-out infinite;
+        }
+
+        /* Card hover effects */
+        .dest-card {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+        }
+
+        .dest-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 35px 60px -15px rgba(13, 148, 36, 0.25);
+            border-color: rgba(13, 148, 36, 0.4);
+        }
+
+        .dest-card:hover img {
+            transform: scale(1.12);
+        }
+
+        .dest-card img {
+            transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* Gallery masonry */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 240px;
+            gap: 1rem;
+        }
+
+        .gallery-grid .gallery-item {
+            overflow: hidden;
+            border-radius: 1.5rem;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-grid .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .gallery-grid .gallery-item:hover img {
+            transform: scale(1.15);
+        }
+
+        .gallery-grid .gallery-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+        .gallery-grid .gallery-item:nth-child(3) {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+        .gallery-grid .gallery-item:nth-child(6) {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 180px;
+                gap: 0.75rem;
+            }
+            .gallery-grid .gallery-item:nth-child(1) {
+                grid-column: span 2;
+                grid-row: span 1;
+            }
+            .gallery-grid .gallery-item:nth-child(3) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+            .gallery-grid .gallery-item:nth-child(6) {
+                grid-column: span 1;
+            }
+        }
+
+        /* Slider dots */
+        .slider-dot {
+            width: 40px;
+            height: 4px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        .slider-dot.active {
+            width: 60px;
+            background: #0d9488;
+            box-shadow: 0 0 0 20px rgba(13, 148, 136, 0.5);
+        }
+
+        /* Nav link hover */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0d9488;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+/* Mobile menu */
+.mobile-menu {
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu.open {
+    max-height: 500px;
+    opacity: 1;
+}
+        footer {
+    margin-bottom: 0;
+    padding-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="fixed top-0 left-0 w-full z-[100]" id="navbar">
+    <div class="glass-light mx-4 mt-4 md:mx-8 md:mt-6 rounded-3xl px-6 py-4 flex items-center justify-between">
+
+        <!-- Desktop Nav -->
+<div class="hidden md:flex items-center space-x-10 text-sm font-medium uppercase tracking-widest text-gray-300">
+    <a href="#home" class="nav-link hover:text-white transition">Home</a>
+    <a href="#experience" class="nav-link hover:text-white transition">About</a>
+    <a href="#footer" class="nav-link hover:text-white transition">Copyright & Credits</a>
+</div>
+        <!-- CTA Button Desktop -->
+        <button class="hidden md:flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-2.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-emerald-500/30">
+            Book Now <i class="fas fa-arrow-right text-sm"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="md:hidden text-white text-2xl" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+    
+<!-- Mobile Menu -->
+<div class="mobile-menu mx-4 mt-2 glass-panel rounded-2xl px-6 py-4 md:hidden" id="mobileMenu">
+    <div class="flex flex-col space-y-4 text-sm font-medium uppercase tracking-widest text-gray-300">
+        <a href="#home" class="hover:text-white transition py-2">Home</a>
+        <a href="#experience" class="hover:text-white transition py-2">About</a>
+        <a href="#footer" class="hover:text-white transition py-2">Copyright & Credits</a>
+    </div>
+</div>
+</nav>
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="home" class="hero-section relative w-full min-h-screen flex items-center justify-center overflow-hidden"
+    style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center 35%;">
+    <!-- Dark artistic overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 pt-12 pb-12 flex flex-col items-start text-left">
+
+        <!-- Main Heading -->
+        <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter leading-none mb-6 animate-fade-up">
+            <span class="text-white">VISIT</span><br class="sm:hidden">
+            <span class="text-emerald-500">KERALA</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-xl sm:text-2xl md:text-3xl font-light text-gray-300 mb-4 animate-fade-up-delayed tracking-wide">
+            Experience God's Own Country
+        </p>
+
+        <!-- Description -->
+        <p class="text-base sm:text-lg text-gray-400 max-w-2xl mb-10 animate-fade-up-delayed-2 leading-relaxed">
+            From mist-clad tea plantations of Munnar to the serene backwaters of Alleppey — discover a land where nature paints its masterpiece.
+        </p>
+
+        <!-- CTA Button -->
+        <button class="group flex items-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-10 py-5 rounded-full text-lg transition-all duration-300 shadow-2xl hover:shadow-red-500/40 pulse-red animate-fade-up-delayed-2">
+            Explore Destinations
+            <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
+        </button>
+
+        <!-- Scroll Hint -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 scroll-indicator">
+            <span class="text-xs uppercase tracking-[0.3em] text-gray-500">Scroll</span>
+            <i class="fas fa-chevron-down text-gray-400"></i>
+        </div>
+    </div>
+
+    <!-- Page indicator -->
+    <div class="absolute bottom-8 right-8 text-gray-500 text-sm font-mono hidden md:block">
+        <span class="text-emerald-500 text-lg font-bold">01</span> / 05
+    </div>
+</section>
+
+<!-- ==================== DESTINATION CARDS SLIDER ==================== -->
+<section id="destinations" class="py-12 md:py-16 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-16 md:mb-20">
+        <span class="text-emerald-500 uppercase tracking-[0.3em] text-sm font-semibold">Curated for you</span>
+        <h2 class="text-4xl md:text-6xl font-bold mt-4 mb-4 leading-tight">
+            Top Destination<br class="sm:hidden"> <span class="text-emerald-500">Recommendations</span>
+        </h2>
+        <div class="w-24 h-1 bg-emerald-600 mx-auto mt-6"></div>
+    </div>
+<!-- Slider Container -->
+<div class="relative overflow-hidden" id="sliderContainer">
+    <div class="flex transition-transform duration-700 ease-in-out" id="sliderTrack">
+
+            
+            <!-- Card 1 -->
+            <div class="slider-card w-full flex-shrink-0 px-3">
+                <div class="dest-card glass-panel rounded-3xl overflow-hidden group">
+                    <div class="overflow-hidden relative">
+                        <img src="https://i.ibb.co/5gRmLP31/50d1ee2861fde6e8b632a583bd1aaead.jpg" alt="Alleppey" class="w-full h-64 object-cover object-bottom">
+                        <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">#1 RANKED</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Alleppey Backwaters</h3>
+                        <p class="text-gray-400 text-xs">Glide through emerald canals on a traditional houseboat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="slider-card w-full flex-shrink-0 px-3">
+                <div class="dest-card glass-panel rounded-3xl overflow-hidden group">
+                    <div class="overflow-hidden relative">
+                        <img src="https://i.ibb.co/67vj8NGr/b67d99f26ec3abcdc718384e0da2256d.jpg" alt="Munnar" class="w-full h-64 object-cover object-bottom">
+                        <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">#2 RANKED</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Munnar Hills</h3>
+                        <p class="text-gray-400 text-xs">Endless tea gardens wrapped in misty mountain air.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="slider-card w-full flex-shrink-0 px-3">
+                <div class="dest-card glass-panel rounded-3xl overflow-hidden group">
+                    <div class="overflow-hidden relative">
+                        <img src="https://i.ibb.co/TqtxmYsV/2b5ed00a87a1c9a9551a35eb92c5151f.jpg" alt="Varkala" class="w-full h-64 object-cover object-bottom">
+                        <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">#3 RANKED</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Varkala Beach</h3>
+                        <p class="text-gray-400 text-xs">Dramatic cliffside beaches with golden sands.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="slider-card w-full flex-shrink-0 px-3">
+                <div class="dest-card glass-panel rounded-3xl overflow-hidden group">
+                    <div class="overflow-hidden relative">
+                        <img src="https://i.ibb.co/pB49DFRM/99013a0c42fa4ef6c0101e0e97718eeb.jpg" alt="Wayanad" class="w-full h-64 object-cover object-bottom">
+                        <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">#4 RANKED</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-xl font-bold">Wayanad</h3>
+                        <p class="text-gray-400 text-xs">Wild forests, waterfalls & spice-scented trails.</p>
+                                        </div>
+                </div>
+            </div>
+            
+                        <!-- Card 5: Kochi -->
+<div class="slider-card w-full flex-shrink-0 px-3">
+    <div class="dest-card glass-panel rounded-3xl overflow-hidden group">
+        <div class="overflow-hidden relative">
+            <img src="https://i.ibb.co/xKLTfLjc/d5b841550b34f37e0af86186cb6c3bca.jpg" alt="Kochi Kerala" class="w-full h-64 object-cover object-bottom">
+            <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">#5 RANKED</div>
+        </div>
+        <div class="p-4">
+            <h3 class="text-xl font-bold">Kochi</h3>
+            <p class="text-gray-400 text-xs">Historic port city with Chinese fishing nets & spice markets.</p>
+        </div>
+    </div>
+</div>
+
+
+        </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="flex justify-center gap-2 mt-8" id="sliderDots">
+        <span class="w-3 h-3 rounded-full bg-emerald-600 cursor-pointer dot"></span>
+        <span class="w-3 h-3 rounded-full bg-gray-600 cursor-pointer dot"></span>
+        <span class="w-3 h-3 rounded-full bg-gray-600 cursor-pointer dot"></span>
+        <span class="w-3 h-3 rounded-full bg-gray-600 cursor-pointer dot"></span>
+        <span class="w-3 h-3 rounded-full bg-gray-600 cursor-pointer dot"></span>
+    </div>
+</section>
+
+<style>
+    .slider-card {
+        width: 100%;
+    }
+    @media (min-width: 640px) {
+        .slider-card {
+            width: 50%;
+        }
+    }
+    @media (min-width: 1024px) {
+        .slider-card {
+            width: 20%;
+        }
+    }
+</style>
+
+<script>
+    const track = document.getElementById('sliderTrack');
+    const dots = document.querySelectorAll('#sliderDots .dot');
+    const cards = document.querySelectorAll('.slider-card');
+    let currentSlide = 0;
+    const totalSlides = 5;
+
+    function goToSlide(index) {
+        currentSlide = index;
+        const cardWidth = cards[0].getBoundingClientRect().width;
+        track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
+        dots.forEach((d, i) => {
+            d.classList.toggle('bg-emerald-600', i === currentSlide);
+            d.classList.toggle('bg-gray-600', i !== currentSlide);
+        });
+    }
+
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        goToSlide(currentSlide);
+    }, 2000);
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => goToSlide(i));
+    });
+
+    window.addEventListener('resize', () => goToSlide(currentSlide));
+</script>
+<!-- ==================== EXPERIENCE SECTION ==================== -->
+<section id="experience" class="relative py-8 md:py-12 overflow-hidden">
+    <div class="relative z-10 max-w-7xl mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div class="lg:w-1/2 text-white">
+                <span class="text-emerald-400 uppercase tracking-[0.3em] text-sm font-semibold">Immerse Yourself</span>
+                <h2 class="text-4xl md:text-6xl font-bold mt-4 mb-6 leading-tight">
+                    Travel & Enjoy<br>Your <span class="text-emerald-500">Holiday</span>
+                </h2>
+                <p class="text-lg text-gray-300 leading-relaxed mb-8 max-w-xl">
+                    Drift along palm-fringed lagoons, breathe in the aroma of spices in the highlands, and witness Kathakali dancers tell ancient stories under starlit skies. Kerala is not just a destination — it's a timeless feeling.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ==================== GALLERY SECTION ==================== -->
+<section id="gallery" class="py-24 md:py-32 px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+        <span class="text-emerald-500 uppercase tracking-[0.3em] text-sm font-semibold">Visual Journey</span>
+        <h2 class="text-4xl md:text-6xl font-bold mt-4 mb-4">Kerala <span class="text-emerald-500">Frames</span></h2>
+      </div>
+    </div>
+
+<!-- ==================== ALLEPPEY GALLERY ==================== -->
+<div class="relative max-w-2xl mx-auto mt-8" id="alleppeyGallery">
+    
+    <!-- Stacked Photos -->
+    <div class="relative h-[400px] sm:h-[400px]" id="photoStack">
+        <!-- Photo 1 -->
+        <div class="photo-slide absolute inset-0 transition-all duration-700 z-10 opacity-100 scale-100" data-index="0">
+            <img src="https://i.ibb.co/WvBkGgGh/2293a2dfbe58a3b0f0ebd6de0396ea65.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <!-- Photo 2 -->
+        <div class="photo-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95" data-index="1">
+            <img src="https://i.ibb.co/tpVq2zvk/c018b8faf250dfc7629c347f1f79226b.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <!-- Photo 3 -->
+        <div class="photo-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95" data-index="2">
+            <img src="https://i.ibb.co/NgydGLjY/74693028e1dc2e8beeda8c525e4c39b0.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <!-- Photo 4 -->
+        <div class="photo-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95" data-index="3">
+            <img src="https://i.ibb.co/rR0vsm5Q/7ca9d14d173be89308705367cabc8ade.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <!-- Photo 5 -->
+        <div class="photo-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95" data-index="4">
+            <img src="https://i.ibb.co/5gMM0RnM/0fc3fc8c36069033a646c42f2b0669d1.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <!-- Photo 6 -->
+        <div class="photo-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95" data-index="5">
+            <img src="https://i.ibb.co/mCdwsNH6/e3a15eb54672b5aaa289265270c5e58c.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+    </div>
+
+    <!-- Description -->
+    <div class="text-center mt-6">
+        <p class="text-gray-300 text-base leading-relaxed max-w-xl mx-auto">
+            Alleppey — the Venice of the East. Glide through tranquil backwaters on a traditional houseboat, surrounded by lush paddy fields, coconut groves, and village life untouched by time.
+        </p>
+    </div>
+    
+    <!-- Dots -->
+    <div class="flex justify-center gap-2 mt-4" id="photoDots">
+        <span class="w-2 h-2 rounded-full bg-emerald-600 cursor-pointer dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer dot"></span>
+    </div>
+</div>
+
+<script>
+    const gallerySlides = document.querySelectorAll('#alleppeyGallery .photo-slide');
+    const galleryDots = document.querySelectorAll('#alleppeyGallery .dot');
+    let currentPhoto = 0;
+    const totalPhotos = 6;
+
+    function goToPhoto(index) {
+        const prev = currentPhoto;
+        currentPhoto = index;
+
+        gallerySlides[prev].style.zIndex = '0';
+        gallerySlides[prev].style.opacity = '0';
+        gallerySlides[prev].style.transform = 'scale(0.9) translateY(20px)';
+
+        gallerySlides[currentPhoto].style.zIndex = '10';
+        gallerySlides[currentPhoto].style.opacity = '1';
+        gallerySlides[currentPhoto].style.transform = 'scale(1) translateY(0)';
+
+        galleryDots.forEach((d, i) => {
+            d.classList.toggle('bg-emerald-600', i === currentPhoto);
+            d.classList.toggle('bg-gray-600', i !== currentPhoto);
+        });
+    }
+
+    function nextPhoto() {
+        goToPhoto((currentPhoto + 1) % totalPhotos);
+    }
+
+    setInterval(nextPhoto, 3000);
+
+    galleryDots.forEach((dot, i) => {
+        dot.addEventListener('click', () => goToPhoto(i));
+    });
+
+    // Initial state
+    gallerySlides.forEach((s, i) => {
+        if (i === 0) {
+            s.style.zIndex = '10';
+            s.style.opacity = '1';
+            s.style.transform = 'scale(1) translateY(0)';
+        }
+    });
+</script>
+
+    <!-- ==================== MUNNAR GALLERY ==================== -->
+<div class="relative max-w-2xl mx-auto mt-8" id="munnarGallery">
+    
+    <!-- Stacked Photos -->
+    <div class="relative h-[350px] sm:h-[400px]" id="munnarPhotoStack">
+        <div class="munnar-slide absolute inset-0 transition-all duration-700 z-10 opacity-100 scale-100">
+            <img src="https://i.ibb.co/cK9kTnG5/e6811cb0164f3b9d9f0dfb2e5ad5c9bb.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="munnar-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/wqCSfZX/e644bb462a1ff0282d89d358ab95b54c.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="munnar-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/HDx11Zpg/19dac71b2c583597549df40c241589b5.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="munnar-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/1tWqhTMF/b67d99f26ec3abcdc718384e0da2256d-1.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="munnar-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/JwVLLzrf/0c0b467dd3f94e0ec65cbc9f8b11d12f.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+    </div>
+
+    <div class="text-center mt-6">
+        <p class="text-gray-300 text-base leading-relaxed max-w-xl mx-auto">
+            Munnar — a breathtaking hill station blanketed in endless tea gardens, misty valleys, and winding trails through the Western Ghats.
+        </p>
+    </div>
+
+    <div class="flex justify-center gap-2 mt-4" id="munnarDots">
+        <span class="w-2 h-2 rounded-full bg-emerald-600 cursor-pointer munnar-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer munnar-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer munnar-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer munnar-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer munnar-dot"></span>
+    </div>
+</div>
+
+<script>
+    const munnarSlides = document.querySelectorAll('.munnar-slide');
+    const munnarDots = document.querySelectorAll('.munnar-dot');
+    let munnarPhoto = 0;
+    const munnarTotal = 5;
+
+    function goMunnar(index) {
+        const prev = munnarPhoto;
+        munnarPhoto = index;
+        munnarSlides[prev].style.zIndex = '0';
+        munnarSlides[prev].style.opacity = '0';
+        munnarSlides[prev].style.transform = 'scale(0.9) translateY(20px)';
+        munnarSlides[munnarPhoto].style.zIndex = '10';
+        munnarSlides[munnarPhoto].style.opacity = '1';
+        munnarSlides[munnarPhoto].style.transform = 'scale(1) translateY(0)';
+        munnarDots.forEach((d, i) => {
+            d.classList.toggle('bg-emerald-600', i === munnarPhoto);
+            d.classList.toggle('bg-gray-600', i !== munnarPhoto);
+        });
+    }
+
+    setInterval(() => { goMunnar((munnarPhoto + 1) % munnarTotal); }, 3000);
+
+    munnarDots.forEach((dot, i) => { dot.addEventListener('click', () => goMunnar(i)); });
+
+    munnarSlides.forEach((s, i) => {
+        if (i !== 0) { s.style.zIndex = '0'; s.style.opacity = '0'; s.style.transform = 'scale(0.9) translateY(20px)'; }
+    });
+</script>
+<!-- ==================== VARKALA GALLERY ==================== -->
+<div class="relative max-w-2xl mx-auto mt-8" id="varkalaGallery">
+    
+    <!-- Stacked Photos -->
+    <div class="relative h-[350px] sm:h-[400px]" id="varkalaPhotoStack">
+        <div class="varkala-slide absolute inset-0 transition-all duration-700 z-10 opacity-100 scale-100">
+            <img src="https://i.ibb.co/mr69W5ht/f4ed79c57db7650a68abef0312774354.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="varkala-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/2175t3Dz/d8c41e549a6f6597500eb8e1d0a4bcc6.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="varkala-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/XrwX9FVf/d58acd638b07e382bed5d37e80f92419.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="varkala-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/5XDDHz30/ef6cb0ba9650c720891cc673b548c305.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="varkala-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/1fNXgWZZ/4067f5d2d7dd917144389b481515ec87.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="varkala-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/7tyYDYF0/934caede5c8dd3ce78860c1f4b08179e.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+    </div>
+
+    <div class="text-center mt-6">
+        <p class="text-gray-300 text-base leading-relaxed max-w-xl mx-auto">
+            Varkala — a stunning cliffside beach where golden sands meet dramatic red laterite cliffs, offering breathtaking sunsets and a serene spiritual vibe.
+        </p>
+    </div>
+
+    <div class="flex justify-center gap-2 mt-4" id="varkalaDots">
+        <span class="w-2 h-2 rounded-full bg-emerald-600 cursor-pointer varkala-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer varkala-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer varkala-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer varkala-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer varkala-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer varkala-dot"></span>
+    </div>
+</div>
+
+<script>
+    const varkalaSlides = document.querySelectorAll('.varkala-slide');
+    const varkalaDots = document.querySelectorAll('.varkala-dot');
+    let varkalaPhoto = 0;
+    const varkalaTotal = 6;
+
+    function goVarkala(index) {
+        const prev = varkalaPhoto;
+        varkalaPhoto = index;
+        varkalaSlides[prev].style.zIndex = '0';
+        varkalaSlides[prev].style.opacity = '0';
+        varkalaSlides[prev].style.transform = 'scale(0.9) translateY(20px)';
+        varkalaSlides[varkalaPhoto].style.zIndex = '10';
+        varkalaSlides[varkalaPhoto].style.opacity = '1';
+        varkalaSlides[varkalaPhoto].style.transform = 'scale(1) translateY(0)';
+        varkalaDots.forEach((d, i) => {
+            d.classList.toggle('bg-emerald-600', i === varkalaPhoto);
+            d.classList.toggle('bg-gray-600', i !== varkalaPhoto);
+        });
+    }
+
+    setInterval(() => { goVarkala((varkalaPhoto + 1) % varkalaTotal); }, 3000);
+
+    varkalaDots.forEach((dot, i) => { dot.addEventListener('click', () => goVarkala(i)); });
+
+    varkalaSlides.forEach((s, i) => {
+        if (i !== 0) { s.style.zIndex = '0'; s.style.opacity = '0'; s.style.transform = 'scale(0.9) translateY(20px)'; }
+    });
+</script>
+
+<!-- ==================== WAYANAD GALLERY ==================== -->
+<div class="relative max-w-2xl mx-auto mt-8" id="wayanadGallery">
+    
+    <!-- Stacked Photos -->
+    <div class="relative h-[350px] sm:h-[400px]" id="wayanadPhotoStack">
+        <div class="wayanad-slide absolute inset-0 transition-all duration-700 z-10 opacity-100 scale-100">
+            <img src="https://i.ibb.co/DD1NRRTD/bb3dc34e1cd4d5d7e3591e860139cc16.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="wayanad-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/LXpFDPBG/948b81df01e3b450f651dd8172030c93.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="wayanad-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/qYF2j7dD/4a2f30aab3aed173a3d9c41147b155ba.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="wayanad-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/4RTW5swy/1a1281411e1278436189e77787b42810.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="wayanad-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/jBhGnK6/05583dd22a66f1ea003a26c79365fe1f.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+    </div>
+
+    <div class="text-center mt-6">
+        <p class="text-gray-300 text-base leading-relaxed max-w-xl mx-auto">
+            Wayanad — a lush green paradise of misty forests, cascading waterfalls, spice plantations, and ancient caves nestled in the Western Ghats.
+        </p>
+    </div>
+
+    <div class="flex justify-center gap-2 mt-4" id="wayanadDots">
+        <span class="w-2 h-2 rounded-full bg-emerald-600 cursor-pointer wayanad-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer wayanad-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer wayanad-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer wayanad-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer wayanad-dot"></span>
+    </div>
+</div>
+
+<script>
+    const wayanadSlides = document.querySelectorAll('.wayanad-slide');
+    const wayanadDots = document.querySelectorAll('.wayanad-dot');
+    let wayanadPhoto = 0;
+    const wayanadTotal = 5;
+
+    function goWayanad(index) {
+        const prev = wayanadPhoto;
+        wayanadPhoto = index;
+        wayanadSlides[prev].style.zIndex = '0';
+        wayanadSlides[prev].style.opacity = '0';
+        wayanadSlides[prev].style.transform = 'scale(0.9) translateY(20px)';
+        wayanadSlides[wayanadPhoto].style.zIndex = '10';
+        wayanadSlides[wayanadPhoto].style.opacity = '1';
+        wayanadSlides[wayanadPhoto].style.transform = 'scale(1) translateY(0)';
+        wayanadDots.forEach((d, i) => {
+            d.classList.toggle('bg-emerald-600', i === wayanadPhoto);
+            d.classList.toggle('bg-gray-600', i !== wayanadPhoto);
+        });
+    }
+
+    setInterval(() => { goWayanad((wayanadPhoto + 1) % wayanadTotal); }, 3000);
+
+    wayanadDots.forEach((dot, i) => { dot.addEventListener('click', () => goWayanad(i)); });
+
+    wayanadSlides.forEach((s, i) => {
+        if (i !== 0) { s.style.zIndex = '0'; s.style.opacity = '0'; s.style.transform = 'scale(0.9) translateY(20px)'; }
+    });
+</script>
+
+<!-- ==================== KOCHI GALLERY ==================== -->
+<div class="relative max-w-2xl mx-auto mt-8" id="kochiGallery">
+    
+    <!-- Stacked Photos -->
+    <div class="relative h-[350px] sm:h-[400px]" id="kochiPhotoStack">
+        <div class="kochi-slide absolute inset-0 transition-all duration-700 z-10 opacity-100 scale-100">
+            <img src="https://i.ibb.co/Y7XVcvjH/f7a6656298a3ef43ddd0bedadbd27b3c.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="kochi-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/HDdMrd5Y/9cabab6be4f519b8dfc0b30965ecc748.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="kochi-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/fzsmPFfw/bfb859e68146d2da3a9d468692425260.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="kochi-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/VYnbHcX4/05e819f8de9b2e6306b4a62e93923a41.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="kochi-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/d4px0LKc/9e3f9b2a3e1c8b1f7485842e99eda6bc.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="kochi-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/4RYjrXwt/f66b655c31e4278a43fa71e03c426e6d.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+        <div class="kochi-slide absolute inset-0 transition-all duration-700 z-0 opacity-0 scale-95">
+            <img src="https://i.ibb.co/gMTh1VhW/94093d4bd9fe5b4c3b0165f2991f40b0.jpg" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+        </div>
+    </div>
+
+    <div class="text-center mt-6">
+        <p class="text-gray-300 text-base leading-relaxed max-w-xl mx-auto">
+            Kochi — the Queen of the Arabian Sea, where colonial heritage meets modern vibrancy. Famous for its Chinese fishing nets, spice markets, and rich cultural tapestry.
+        </p>
+    </div>
+
+    <div class="flex justify-center gap-2 mt-4" id="kochiDots">
+        <span class="w-2 h-2 rounded-full bg-emerald-600 cursor-pointer kochi-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer kochi-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer kochi-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer kochi-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer kochi-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer kochi-dot"></span>
+        <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer kochi-dot"></span>
+    </div>
+</div>
+
+<script>
+    const kochiSlides = document.querySelectorAll('.kochi-slide');
+    const kochiDots = document.querySelectorAll('.kochi-dot');
+    let kochiPhoto = 0;
+    const kochiTotal = 7;
+
+    function goKochi(index) {
+        const prev = kochiPhoto;
+        kochiPhoto = index;
+        kochiSlides[prev].style.zIndex = '0';
+        kochiSlides[prev].style.opacity = '0';
+        kochiSlides[prev].style.transform = 'scale(0.9) translateY(20px)';
+        kochiSlides[kochiPhoto].style.zIndex = '10';
+        kochiSlides[kochiPhoto].style.opacity = '1';
+        kochiSlides[kochiPhoto].style.transform = 'scale(1) translateY(0)';
+        kochiDots.forEach((d, i) => {
+            d.classList.toggle('bg-emerald-600', i === kochiPhoto);
+            d.classList.toggle('bg-gray-600', i !== kochiPhoto);
+        });
+    }
+
+    setInterval(() => { goKochi((kochiPhoto + 1) % kochiTotal); }, 3000);
+
+    kochiDots.forEach((dot, i) => { dot.addEventListener('click', () => goKochi(i)); });
+
+    kochiSlides.forEach((s, i) => {
+        if (i !== 0) { s.style.zIndex = '0'; s.style.opacity = '0'; s.style.transform = 'scale(0.9) translateY(20px)'; }
+    });
+</script>
+</section>
+<!-- ==================== FOOTER ==================== -->
+<footer id="footer" class="pt-6 pb-2 px-0">
+    <div class="max-w-7xl mx-auto text-center px-6">
+        <p class="text-white text-base font-semibold mb-1">Designer & Developer <span></span></p></span> <p class="text-emerald-500">Abhijeet Shrivastava</span></p>
+        <a href="mailto:contact@abhii.online" class="text-gray-400 text-sm hover:text-emerald-400 transition">
+            <i class="fas fa-envelope text-emerald-500 mr-1"></i>contact@abhii.online
+        </a>
+        <hr class="border-white/10 my-4 w-full">
+        <div class="text-center text-gray-500 text-xs px-6">
+            <p class="mb-0 pb-0">&copy; 2026 Kerala Tourism</p>
+            <p class="text-gray-600 mb-0 pb-0">Images sourced from Pinterest. Used for educational purposes.</p>
+        </div>
+    </div>
+</footer>
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = menuToggle.querySelector('i');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+        if (mobileMenu.classList.contains('open')) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-times');
+        } else {
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        }
+    });
+
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            menuIcon.classList.remove('fa-times');
+            menuIcon.classList.add('fa-bars');
+        });
+    });
+</script>
+</body>
+</html>
