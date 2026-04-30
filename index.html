@@ -390,18 +390,12 @@ body::before {
                 <div class="sm:w-[58%] text-white">
                     <h3 class="text-lg sm:text-xl font-bold">Alleppey Backwaters</h3>
                     <p class="text-emerald-400 text-xs mb-2">Venice of the East · Houseboat Paradise</p>
-                    
-                    <!-- Temperature & Best Time -->
                     <div class="flex gap-2 text-xs mb-2">
                         <span class="bg-white/5 px-2 py-1 rounded-lg">🌡️ 25°-32°C</span>
                         <span class="bg-white/5 px-2 py-1 rounded-lg">📅 Best: Nov-Feb</span>
                     </div>
-                    
-                    <!-- Must Try Foods -->
                     <p class="text-emerald-400 text-xs font-semibold mt-2">🍽️ Must Try:</p>
                     <p class="text-gray-300 text-xs leading-relaxed">Karimeen Pollichathu (pearl spot fish wrapped in banana leaf), Kerala Sadya (24-dish banana leaf feast), Alleppey Fish Curry, Kappa & Meen (tapioca with fish), Toddy.</p>
-                    
-                    <!-- Activities -->
                     <p class="text-emerald-400 text-xs font-semibold mt-2">🎯 Activities:</p>
                     <p class="text-gray-300 text-xs leading-relaxed">Glide through palm-fringed canals on a traditional Kettuvallam houseboat, explore village paths between paddy fields, and witness golden sunset over Vembanad Lake framed by coconut groves.</p>
                 </div>
@@ -498,31 +492,23 @@ body::before {
 
     </div>
 </div>
+
+<!-- Dots -->
+<div class="flex justify-center gap-2 mt-6" id="sliderDots">
+    <span class="w-2 h-2 rounded-full bg-emerald-600 cursor-pointer dot"></span>
+    <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer dot"></span>
+    <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer dot"></span>
+    <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer dot"></span>
+    <span class="w-2 h-2 rounded-full bg-gray-600 cursor-pointer dot"></span>
+</div>
 </section>
 
 <style>
-    .slider-card {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: all 0.6s ease;
-    }
-    #sliderContainer {
-        height: 540px;
-        position: relative;
-    }
-    @media (min-width: 640px) {
-        #sliderContainer { height: 440px; }
-    }
-    .slider-card .dest-card {
-        height: 100%;
-    }
-    .slider-card img {
-        height: 100%;
-        min-height: 260px;
-        object-fit: cover;
-    }
+    .slider-card { width: 100%; position: absolute; top: 0; left: 0; transition: all 0.6s ease; }
+    #sliderContainer { height: 540px; position: relative; }
+    @media (min-width: 640px) { #sliderContainer { height: 440px; } }
+    .slider-card .dest-card { height: 100%; }
+    .slider-card img { height: 100%; min-height: 260px; object-fit: cover; }
 </style>
 
 <script>
@@ -536,19 +522,14 @@ body::before {
         cards[currentSlide].style.transform = 'scale(0.95)';
         cards[currentSlide].style.zIndex = '0';
         dots[currentSlide].classList.replace('bg-emerald-600', 'bg-gray-600');
-        
         currentSlide = (currentSlide + 1) % totalSlides;
-        
         cards[currentSlide].style.opacity = '1';
         cards[currentSlide].style.transform = 'scale(1)';
         cards[currentSlide].style.zIndex = '10';
         dots[currentSlide].classList.replace('bg-gray-600', 'bg-emerald-600');
     }
 
-    cards.forEach((c, i) => {
-        c.style.transition = 'all 0.6s ease';
-        if (i !== 0) { c.style.opacity = '0'; c.style.transform = 'scale(0.95)'; }
-    });
+    cards.forEach((c, i) => { c.style.transition = 'all 0.6s ease'; if (i !== 0) { c.style.opacity = '0'; c.style.transform = 'scale(0.95)'; } });
     cards[0].style.zIndex = '10';
 
     dots.forEach((dot, i) => {
