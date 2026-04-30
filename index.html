@@ -376,155 +376,166 @@ body::before {
         </h2>
         <div class="w-24 h-1 bg-emerald-600 mx-auto mt-6"></div>
     </div>
+
 <!-- Slider Container -->
 <div class="relative overflow-hidden" id="sliderContainer">
-    <div class="flex transition-transform duration-700 ease-in-out" id="sliderTrack">
+    <div id="sliderTrack">
 
-            
-            <!-- Card 1 -->
-            <div class="slider-card w-full flex-shrink-0 px-3">
-                <div class="dest-card glass-panel rounded-3xl overflow-hidden group">
-                    <div class="overflow-hidden relative">
-                        <img src="https://i.ibb.co/5gRmLP31/50d1ee2861fde6e8b632a583bd1aaead.jpg" alt="Alleppey" class="w-full h-64 object-cover object-bottom">
-                        <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">#1 RANKED</div>
+        <!-- Card 1: Alleppey -->
+        <div class="slider-card w-full flex-shrink-0 px-3">
+            <div class="dest-card glass-panel rounded-3xl overflow-hidden group p-4 sm:p-5 flex flex-col sm:flex-row gap-4">
+                <div class="sm:w-1/2 h-48 sm:h-64 overflow-hidden rounded-2xl flex-shrink-0">
+                    <img src="https://i.ibb.co/5gRmLP31/50d1ee2861fde6e8b632a583bd1aaead.jpg" alt="Alleppey" class="w-full h-full object-cover">
+                </div>
+                <div class="sm:w-1/2 text-white space-y-3">
+                    <div>
+                        <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">#1 RANKED</span>
+                        <h3 class="text-xl sm:text-2xl font-bold mt-2">Alleppey Backwaters</h3>
+                        <p class="text-emerald-400 text-xs">Venice of the East</p>
                     </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold">Alleppey Backwaters</h3>
-                        <p class="text-gray-400 text-xs">Glide through emerald canals on a traditional houseboat.</p>
+                    <div class="space-y-2 text-xs sm:text-sm">
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🌡️</span><span class="text-gray-300">25°C - 32°C</span></div>
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>📅</span><span class="text-gray-300">Best: Nov - Feb</span></div>
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🍽️</span><span class="text-gray-300">Karimeen Pollichathu</span></div>
+                        <div class="flex items-start gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🎯</span><span class="text-gray-300">Houseboat, Village Walk, Sunset</span></div>
                     </div>
                 </div>
             </div>
-
-            <!-- Card 2 -->
-            <div class="slider-card w-full flex-shrink-0 px-3">
-                <div class="dest-card glass-panel rounded-3xl overflow-hidden group">
-                    <div class="overflow-hidden relative">
-                        <img src="https://i.ibb.co/67vj8NGr/b67d99f26ec3abcdc718384e0da2256d.jpg" alt="Munnar" class="w-full h-64 object-cover object-bottom">
-                        <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">#2 RANKED</div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold">Munnar Hills</h3>
-                        <p class="text-gray-400 text-xs">Endless tea gardens wrapped in misty mountain air.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="slider-card w-full flex-shrink-0 px-3">
-                <div class="dest-card glass-panel rounded-3xl overflow-hidden group">
-                    <div class="overflow-hidden relative">
-                        <img src="https://i.ibb.co/TqtxmYsV/2b5ed00a87a1c9a9551a35eb92c5151f.jpg" alt="Varkala" class="w-full h-64 object-cover object-bottom">
-                        <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">#3 RANKED</div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold">Varkala Beach</h3>
-                        <p class="text-gray-400 text-xs">Dramatic cliffside beaches with golden sands.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="slider-card w-full flex-shrink-0 px-3">
-                <div class="dest-card glass-panel rounded-3xl overflow-hidden group">
-                    <div class="overflow-hidden relative">
-                        <img src="https://i.ibb.co/pB49DFRM/99013a0c42fa4ef6c0101e0e97718eeb.jpg" alt="Wayanad" class="w-full h-64 object-cover object-bottom">
-                        <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">#4 RANKED</div>
-                    </div>
-                    <div class="p-4">
-                        <h3 class="text-xl font-bold">Wayanad</h3>
-                        <p class="text-gray-400 text-xs">Wild forests, waterfalls & spice-scented trails.</p>
-                                        </div>
-                </div>
-            </div>
-            
-                        <!-- Card 5: Kochi -->
-<div class="slider-card w-full flex-shrink-0 px-3">
-    <div class="dest-card glass-panel rounded-3xl overflow-hidden group">
-        <div class="overflow-hidden relative">
-            <img src="https://i.ibb.co/xKLTfLjc/d5b841550b34f37e0af86186cb6c3bca.jpg" alt="Kochi Kerala" class="w-full h-64 object-cover object-bottom">
-            <div class="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-full">#5 RANKED</div>
         </div>
-        <div class="p-4">
-            <h3 class="text-xl font-bold">Kochi</h3>
-            <p class="text-gray-400 text-xs">Historic port city with Chinese fishing nets & spice markets.</p>
+
+        <!-- Card 2: Munnar -->
+        <div class="slider-card w-full flex-shrink-0 px-3">
+            <div class="dest-card glass-panel rounded-3xl overflow-hidden group p-4 sm:p-5 flex flex-col sm:flex-row gap-4">
+                <div class="sm:w-1/2 h-48 sm:h-64 overflow-hidden rounded-2xl flex-shrink-0">
+                    <img src="https://i.ibb.co/67vj8NGr/b67d99f26ec3abcdc718384e0da2256d.jpg" alt="Munnar" class="w-full h-full object-cover">
+                </div>
+                <div class="sm:w-1/2 text-white space-y-3">
+                    <div>
+                        <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">#2 RANKED</span>
+                        <h3 class="text-xl sm:text-2xl font-bold mt-2">Munnar Hills</h3>
+                        <p class="text-emerald-400 text-xs">Tea Garden Paradise</p>
+                    </div>
+                    <div class="space-y-2 text-xs sm:text-sm">
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🌡️</span><span class="text-gray-300">15°C - 22°C</span></div>
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>📅</span><span class="text-gray-300">Best: Oct - Mar</span></div>
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🍽️</span><span class="text-gray-300">Appam with Stew</span></div>
+                        <div class="flex items-start gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🎯</span><span class="text-gray-300">Tea Walk, Eravikulam, Echo Point</span></div>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- Card 3: Varkala -->
+        <div class="slider-card w-full flex-shrink-0 px-3">
+            <div class="dest-card glass-panel rounded-3xl overflow-hidden group p-4 sm:p-5 flex flex-col sm:flex-row gap-4">
+                <div class="sm:w-1/2 h-48 sm:h-64 overflow-hidden rounded-2xl flex-shrink-0">
+                    <img src="https://i.ibb.co/TqtxmYsV/2b5ed00a87a1c9a9551a35eb92c5151f.jpg" alt="Varkala" class="w-full h-full object-cover">
+                </div>
+                <div class="sm:w-1/2 text-white space-y-3">
+                    <div>
+                        <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">#3 RANKED</span>
+                        <h3 class="text-xl sm:text-2xl font-bold mt-2">Varkala Beach</h3>
+                        <p class="text-emerald-400 text-xs">Cliffside Paradise</p>
+                    </div>
+                    <div class="space-y-2 text-xs sm:text-sm">
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🌡️</span><span class="text-gray-300">28°C - 33°C</span></div>
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>📅</span><span class="text-gray-300">Best: Oct - Mar</span></div>
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🍽️</span><span class="text-gray-300">Grilled Seafood</span></div>
+                        <div class="flex items-start gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🎯</span><span class="text-gray-300">Yoga, Parasailing, Temple</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4: Wayanad -->
+        <div class="slider-card w-full flex-shrink-0 px-3">
+            <div class="dest-card glass-panel rounded-3xl overflow-hidden group p-4 sm:p-5 flex flex-col sm:flex-row gap-4">
+                <div class="sm:w-1/2 h-48 sm:h-64 overflow-hidden rounded-2xl flex-shrink-0">
+                    <img src="https://i.ibb.co/pB49DFRM/99013a0c42fa4ef6c0101e0e97718eeb.jpg" alt="Wayanad" class="w-full h-full object-cover">
+                </div>
+                <div class="sm:w-1/2 text-white space-y-3">
+                    <div>
+                        <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">#4 RANKED</span>
+                        <h3 class="text-xl sm:text-2xl font-bold mt-2">Wayanad</h3>
+                        <p class="text-emerald-400 text-xs">Forest Paradise</p>
+                    </div>
+                    <div class="space-y-2 text-xs sm:text-sm">
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🌡️</span><span class="text-gray-300">18°C - 25°C</span></div>
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>📅</span><span class="text-gray-300">Best: Oct - Feb</span></div>
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🍽️</span><span class="text-gray-300">Puttu with Kadala Curry</span></div>
+                        <div class="flex items-start gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🎯</span><span class="text-gray-300">Edakkal Caves, Safari, Dam</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 5: Kochi -->
+        <div class="slider-card w-full flex-shrink-0 px-3">
+            <div class="dest-card glass-panel rounded-3xl overflow-hidden group p-4 sm:p-5 flex flex-col sm:flex-row gap-4">
+                <div class="sm:w-1/2 h-48 sm:h-64 overflow-hidden rounded-2xl flex-shrink-0">
+                    <img src="https://i.ibb.co/xKLTfLjc/d5b841550b34f37e0af86186cb6c3bca.jpg" alt="Kochi" class="w-full h-full object-cover">
+                </div>
+                <div class="sm:w-1/2 text-white space-y-3">
+                    <div>
+                        <span class="bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">#5 RANKED</span>
+                        <h3 class="text-xl sm:text-2xl font-bold mt-2">Kochi</h3>
+                        <p class="text-emerald-400 text-xs">Queen of Arabian Sea</p>
+                    </div>
+                    <div class="space-y-2 text-xs sm:text-sm">
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🌡️</span><span class="text-gray-300">28°C - 35°C</span></div>
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>📅</span><span class="text-gray-300">Best: Oct - Mar</span></div>
+                        <div class="flex items-center gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🍽️</span><span class="text-gray-300">Malabar Biryani</span></div>
+                        <div class="flex items-start gap-2 bg-white/5 rounded-lg px-3 py-2"><span>🎯</span><span class="text-gray-300">Fort Kochi, Nets, Kathakali</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
-
-
-        </div>
-    </div>
-
-    <!-- Dots -->
-    <div class="flex justify-center gap-2 mt-8" id="sliderDots">
-        <span class="w-3 h-3 rounded-full bg-emerald-600 cursor-pointer dot"></span>
-        <span class="w-3 h-3 rounded-full bg-gray-600 cursor-pointer dot"></span>
-        <span class="w-3 h-3 rounded-full bg-gray-600 cursor-pointer dot"></span>
-        <span class="w-3 h-3 rounded-full bg-gray-600 cursor-pointer dot"></span>
-        <span class="w-3 h-3 rounded-full bg-gray-600 cursor-pointer dot"></span>
-    </div>
 </section>
 
 <style>
     .slider-card {
         width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.6s ease;
+    }
+    #sliderContainer {
+        height: 340px;
+        position: relative;
     }
     @media (min-width: 640px) {
-        .slider-card {
-            width: 50%;
-        }
-    }
-    @media (min-width: 1024px) {
-        .slider-card {
-            width: 20%;
-        }
+        #sliderContainer { height: 300px; }
     }
 </style>
 
 <script>
-    const track = document.getElementById('sliderTrack');
-    const dots = document.querySelectorAll('#sliderDots .dot');
     const cards = document.querySelectorAll('.slider-card');
     let currentSlide = 0;
     const totalSlides = 5;
 
-    function goToSlide(index) {
-        currentSlide = index;
-        const cardWidth = cards[0].getBoundingClientRect().width;
-        track.style.transform = `translateX(-${currentSlide * cardWidth}px)`;
-        dots.forEach((d, i) => {
-            d.classList.toggle('bg-emerald-600', i === currentSlide);
-            d.classList.toggle('bg-gray-600', i !== currentSlide);
-        });
+    function slide() {
+        cards[currentSlide].style.opacity = '0';
+        cards[currentSlide].style.transform = 'scale(0.95)';
+        cards[currentSlide].style.zIndex = '0';
+        currentSlide = (currentSlide + 1) % totalSlides;
+        cards[currentSlide].style.opacity = '1';
+        cards[currentSlide].style.transform = 'scale(1)';
+        cards[currentSlide].style.zIndex = '10';
     }
 
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % totalSlides;
-        goToSlide(currentSlide);
-    }, 2000);
-
-    dots.forEach((dot, i) => {
-        dot.addEventListener('click', () => goToSlide(i));
+    cards.forEach((c, i) => {
+        c.style.transition = 'all 0.6s ease';
+        if (i !== 0) { c.style.opacity = '0'; c.style.transform = 'scale(0.95)'; }
     });
+    cards[0].style.zIndex = '10';
 
-    window.addEventListener('resize', () => goToSlide(currentSlide));
+    setInterval(slide, 3000);
 </script>
-<!-- ==================== EXPERIENCE SECTION ==================== -->
-<section id="experience" class="relative py-8 md:py-12 overflow-hidden">
-    <div class="relative z-10 max-w-7xl mx-auto px-6">
-        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            <div class="lg:w-1/2 text-white">
-                <span class="text-emerald-400 uppercase tracking-[0.3em] text-sm font-semibold">Immerse Yourself</span>
-                <h2 class="text-4xl md:text-6xl font-bold mt-4 mb-6 leading-tight">
-                    Travel & Enjoy<br>Your <span class="text-emerald-500">Holiday</span>
-                </h2>
-                <p class="text-lg text-gray-300 leading-relaxed mb-8 max-w-xl">
-                    Drift along palm-fringed lagoons, breathe in the aroma of spices in the highlands, and witness Kathakali dancers tell ancient stories under starlit skies. Kerala is not just a destination — it's a timeless feeling.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+
 <!-- ==================== GALLERY SECTION ==================== -->
 <section id="gallery" class="py-24 md:py-32 px-6 max-w-7xl mx-auto">
     <div class="text-center mb-16">
