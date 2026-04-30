@@ -509,39 +509,22 @@ body::before {
         transition: all 0.6s ease;
     }
     #sliderContainer {
-        height: 500px;
+        height: 540px;
         position: relative;
     }
     @media (min-width: 640px) {
-        #sliderContainer { height: 460px; }
+        #sliderContainer { height: 440px; }
     }
     .slider-card .dest-card {
         height: 100%;
     }
     .slider-card img {
         height: 100%;
-        min-height: 250px;
+        min-height: 260px;
         object-fit: cover;
     }
 </style>
 
-<style>
-    .slider-card {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: all 0.6s ease;
-    }
-    #sliderContainer {
-        height: 280px;
-        position: relative;
-    }
-    @media (min-width: 640px) {
-        #sliderContainer { height: 240px; }
-    }
-</style>
-
 <script>
     const cards = document.querySelectorAll('.slider-card');
     let currentSlide = 0;
@@ -563,89 +546,7 @@ body::before {
     });
     cards[0].style.zIndex = '10';
 
-    setInterval(slide, 3000);
-</script>
-
-<style>
-    .slider-card {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: all 0.6s ease;
-    }
-    #sliderContainer {
-        height: 360px;
-        position: relative;
-    }
-    @media (min-width: 640px) {
-        #sliderContainer { height: 320px; }
-    }
-</style>
-
-<script>
-    const cards = document.querySelectorAll('.slider-card');
-    let currentSlide = 0;
-    const totalSlides = 5;
-
-    function slide() {
-        cards[currentSlide].style.opacity = '0';
-        cards[currentSlide].style.transform = 'scale(0.95)';
-        cards[currentSlide].style.zIndex = '0';
-        currentSlide = (currentSlide + 1) % totalSlides;
-        cards[currentSlide].style.opacity = '1';
-        cards[currentSlide].style.transform = 'scale(1)';
-        cards[currentSlide].style.zIndex = '10';
-    }
-
-    cards.forEach((c, i) => {
-        c.style.transition = 'all 0.6s ease';
-        if (i !== 0) { c.style.opacity = '0'; c.style.transform = 'scale(0.95)'; }
-    });
-    cards[0].style.zIndex = '10';
-
-    setInterval(slide, 3000);
-</script>
-
-<style>
-    .slider-card {
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: all 0.6s ease;
-    }
-    #sliderContainer {
-        height: 340px;
-        position: relative;
-    }
-    @media (min-width: 640px) {
-        #sliderContainer { height: 300px; }
-    }
-</style>
-
-<script>
-    const cards = document.querySelectorAll('.slider-card');
-    let currentSlide = 0;
-    const totalSlides = 5;
-
-    function slide() {
-        cards[currentSlide].style.opacity = '0';
-        cards[currentSlide].style.transform = 'scale(0.95)';
-        cards[currentSlide].style.zIndex = '0';
-        currentSlide = (currentSlide + 1) % totalSlides;
-        cards[currentSlide].style.opacity = '1';
-        cards[currentSlide].style.transform = 'scale(1)';
-        cards[currentSlide].style.zIndex = '10';
-    }
-
-    cards.forEach((c, i) => {
-        c.style.transition = 'all 0.6s ease';
-        if (i !== 0) { c.style.opacity = '0'; c.style.transform = 'scale(0.95)'; }
-    });
-    cards[0].style.zIndex = '10';
-
-    setInterval(slide, 3000);
+    setInterval(slide, 4000);
 </script>
 
 <!-- ==================== GALLERY SECTION ==================== -->
