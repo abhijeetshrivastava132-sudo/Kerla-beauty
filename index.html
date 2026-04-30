@@ -509,40 +509,21 @@ body::before {
         transition: all 0.6s ease;
     }
     #sliderContainer {
-        height: 460px;
+        height: 500px;
         position: relative;
     }
     @media (min-width: 640px) {
-        #sliderContainer { height: 420px; }
+        #sliderContainer { height: 460px; }
     }
-    @media (max-width: 639px) {
-        #sliderContainer { height: 520px; }
+    .slider-card .dest-card {
+        height: 100%;
+    }
+    .slider-card img {
+        height: 100%;
+        min-height: 250px;
+        object-fit: cover;
     }
 </style>
-
-<script>
-    const cards = document.querySelectorAll('.slider-card');
-    let currentSlide = 0;
-    const totalSlides = 5;
-
-    function slide() {
-        cards[currentSlide].style.opacity = '0';
-        cards[currentSlide].style.transform = 'scale(0.95)';
-        cards[currentSlide].style.zIndex = '0';
-        currentSlide = (currentSlide + 1) % totalSlides;
-        cards[currentSlide].style.opacity = '1';
-        cards[currentSlide].style.transform = 'scale(1)';
-        cards[currentSlide].style.zIndex = '10';
-    }
-
-    cards.forEach((c, i) => {
-        c.style.transition = 'all 0.6s ease';
-        if (i !== 0) { c.style.opacity = '0'; c.style.transform = 'scale(0.95)'; }
-    });
-    cards[0].style.zIndex = '10';
-
-    setInterval(slide, 4000);
-</script>
 
 <style>
     .slider-card {
