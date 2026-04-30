@@ -527,6 +527,7 @@ body::before {
 
 <script>
     const cards = document.querySelectorAll('.slider-card');
+    const dots = document.querySelectorAll('#sliderDots .dot');
     let currentSlide = 0;
     const totalSlides = 5;
 
@@ -534,10 +535,14 @@ body::before {
         cards[currentSlide].style.opacity = '0';
         cards[currentSlide].style.transform = 'scale(0.95)';
         cards[currentSlide].style.zIndex = '0';
+        dots[currentSlide].classList.replace('bg-emerald-600', 'bg-gray-600');
+        
         currentSlide = (currentSlide + 1) % totalSlides;
+        
         cards[currentSlide].style.opacity = '1';
         cards[currentSlide].style.transform = 'scale(1)';
         cards[currentSlide].style.zIndex = '10';
+        dots[currentSlide].classList.replace('bg-gray-600', 'bg-emerald-600');
     }
 
     cards.forEach((c, i) => {
@@ -545,6 +550,20 @@ body::before {
         if (i !== 0) { c.style.opacity = '0'; c.style.transform = 'scale(0.95)'; }
     });
     cards[0].style.zIndex = '10';
+
+    dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+            cards[currentSlide].style.opacity = '0';
+            cards[currentSlide].style.transform = 'scale(0.95)';
+            cards[currentSlide].style.zIndex = '0';
+            dots[currentSlide].classList.replace('bg-emerald-600', 'bg-gray-600');
+            currentSlide = i;
+            cards[currentSlide].style.opacity = '1';
+            cards[currentSlide].style.transform = 'scale(1)';
+            cards[currentSlide].style.zIndex = '10';
+            dots[currentSlide].classList.replace('bg-gray-600', 'bg-emerald-600');
+        });
+    });
 
     setInterval(slide, 8000);
 </script>
