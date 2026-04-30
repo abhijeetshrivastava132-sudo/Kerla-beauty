@@ -369,7 +369,7 @@ body::before {
 
 <!-- ==================== DESTINATION CARDS SLIDER ==================== -->
 <section id="destinations" class="py-12 md:py-16 px-6 max-w-7xl mx-auto">
-    <div class="text-center mb-16 md:mb-20">
+    <div class="text-center mb-10 md:mb-14">
         <span class="text-emerald-500 uppercase tracking-[0.3em] text-sm font-semibold">Curated for you</span>
         <h2 class="text-4xl md:text-6xl font-bold mt-4 mb-4 leading-tight">
             Top Destination<br class="sm:hidden"> <span class="text-emerald-500">Recommendations</span>
@@ -377,106 +377,121 @@ body::before {
         <div class="w-24 h-1 bg-emerald-600 mx-auto mt-6"></div>
     </div>
 
-<!-- Slider Container -->
 <div class="relative overflow-hidden" id="sliderContainer">
     <div id="sliderTrack">
 
         <!-- Card 1: Alleppey -->
-        <div class="slider-card w-full flex-shrink-0 px-3">
-            <div class="dest-card glass-panel rounded-3xl overflow-hidden group p-3 sm:p-4 flex flex-col sm:flex-row gap-3 sm:gap-4 bg-emerald-950/30 border border-emerald-800/30">
-                <div class="sm:w-[45%] overflow-hidden rounded-2xl relative flex-shrink-0 h-44 sm:h-auto">
+        <div class="slider-card w-full flex-shrink-0 px-2">
+            <div class="dest-card glass-panel rounded-3xl p-4 sm:p-5 flex flex-col sm:flex-row gap-4 bg-emerald-950/30 border border-emerald-800/30 max-w-3xl mx-auto">
+                <div class="sm:w-[42%] overflow-hidden rounded-2xl relative flex-shrink-0 h-48 sm:h-auto">
                     <img src="https://i.ibb.co/5gRmLP31/50d1ee2861fde6e8b632a583bd1aaead.jpg" alt="Alleppey" class="w-full h-full object-cover">
                     <span class="absolute top-3 left-3 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">#1</span>
                 </div>
-                <div class="sm:w-[55%] text-white flex flex-col justify-center">
+                <div class="sm:w-[58%] text-white">
                     <h3 class="text-lg sm:text-xl font-bold">Alleppey Backwaters</h3>
-                    <p class="text-emerald-400 text-xs mb-2">Venice of the East</p>
-                    <div class="grid grid-cols-2 gap-1.5 text-xs">
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🌡️</span> 25-32°C</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>📅</span> Nov-Feb</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🍽️</span> Karimeen Pollichathu</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🎯</span> Houseboat, Village Walk</div>
+                    <p class="text-emerald-400 text-xs mb-2">Venice of the East · Houseboat Paradise</p>
+                    
+                    <!-- Temperature & Best Time -->
+                    <div class="flex gap-2 text-xs mb-2">
+                        <span class="bg-white/5 px-2 py-1 rounded-lg">🌡️ 25°-32°C</span>
+                        <span class="bg-white/5 px-2 py-1 rounded-lg">📅 Best: Nov-Feb</span>
                     </div>
+                    
+                    <!-- Must Try Foods -->
+                    <p class="text-emerald-400 text-xs font-semibold mt-2">🍽️ Must Try:</p>
+                    <p class="text-gray-300 text-xs leading-relaxed">Karimeen Pollichathu (pearl spot fish wrapped in banana leaf), Kerala Sadya (24-dish banana leaf feast), Alleppey Fish Curry, Kappa & Meen (tapioca with fish), Toddy.</p>
+                    
+                    <!-- Activities -->
+                    <p class="text-emerald-400 text-xs font-semibold mt-2">🎯 Activities:</p>
+                    <p class="text-gray-300 text-xs leading-relaxed">Glide through palm-fringed canals on a traditional Kettuvallam houseboat, explore village paths between paddy fields, and witness golden sunset over Vembanad Lake framed by coconut groves.</p>
                 </div>
             </div>
         </div>
 
         <!-- Card 2: Munnar -->
-        <div class="slider-card w-full flex-shrink-0 px-3">
-            <div class="dest-card glass-panel rounded-3xl overflow-hidden group p-3 sm:p-4 flex flex-col sm:flex-row gap-3 sm:gap-4 bg-emerald-950/30 border border-emerald-800/30">
-                <div class="sm:w-[45%] overflow-hidden rounded-2xl relative flex-shrink-0 h-44 sm:h-auto">
+        <div class="slider-card w-full flex-shrink-0 px-2">
+            <div class="dest-card glass-panel rounded-3xl p-4 sm:p-5 flex flex-col sm:flex-row gap-4 bg-emerald-950/30 border border-emerald-800/30 max-w-3xl mx-auto">
+                <div class="sm:w-[42%] overflow-hidden rounded-2xl relative flex-shrink-0 h-48 sm:h-auto">
                     <img src="https://i.ibb.co/67vj8NGr/b67d99f26ec3abcdc718384e0da2256d.jpg" alt="Munnar" class="w-full h-full object-cover">
                     <span class="absolute top-3 left-3 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">#2</span>
                 </div>
-                <div class="sm:w-[55%] text-white flex flex-col justify-center">
+                <div class="sm:w-[58%] text-white">
                     <h3 class="text-lg sm:text-xl font-bold">Munnar Hills</h3>
-                    <p class="text-emerald-400 text-xs mb-2">Tea Garden Paradise</p>
-                    <div class="grid grid-cols-2 gap-1.5 text-xs">
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🌡️</span> 15-22°C</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>📅</span> Oct-Mar</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🍽️</span> Appam with Stew</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🎯</span> Tea Walk, Eravikulam</div>
+                    <p class="text-emerald-400 text-xs mb-2">Tea Garden Paradise · Misty Mountains</p>
+                    <div class="flex gap-2 text-xs mb-2">
+                        <span class="bg-white/5 px-2 py-1 rounded-lg">🌡️ 15°-22°C</span>
+                        <span class="bg-white/5 px-2 py-1 rounded-lg">📅 Best: Oct-Mar</span>
                     </div>
+                    <p class="text-emerald-400 text-xs font-semibold mt-2">🍽️ Must Try:</p>
+                    <p class="text-gray-300 text-xs leading-relaxed">Appam with Stew (creamy coconut milk curry), Puttu with Kadala Curry, Kairali Thali, Fresh Tea from local plantations, Homemade chocolates.</p>
+                    <p class="text-emerald-400 text-xs font-semibold mt-2">🎯 Activities:</p>
+                    <p class="text-gray-300 text-xs leading-relaxed">Wander through endless emerald tea carpets blanketed in mountain mist, visit Eravikulam National Park home to the endangered Nilgiri Tahr, and watch clouds roll in at Echo Point (1700m elevation).</p>
                 </div>
             </div>
         </div>
 
         <!-- Card 3: Varkala -->
-        <div class="slider-card w-full flex-shrink-0 px-3">
-            <div class="dest-card glass-panel rounded-3xl overflow-hidden group p-3 sm:p-4 flex flex-col sm:flex-row gap-3 sm:gap-4 bg-emerald-950/30 border border-emerald-800/30">
-                <div class="sm:w-[45%] overflow-hidden rounded-2xl relative flex-shrink-0 h-44 sm:h-auto">
+        <div class="slider-card w-full flex-shrink-0 px-2">
+            <div class="dest-card glass-panel rounded-3xl p-4 sm:p-5 flex flex-col sm:flex-row gap-4 bg-emerald-950/30 border border-emerald-800/30 max-w-3xl mx-auto">
+                <div class="sm:w-[42%] overflow-hidden rounded-2xl relative flex-shrink-0 h-48 sm:h-auto">
                     <img src="https://i.ibb.co/TqtxmYsV/2b5ed00a87a1c9a9551a35eb92c5151f.jpg" alt="Varkala" class="w-full h-full object-cover">
                     <span class="absolute top-3 left-3 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">#3</span>
                 </div>
-                <div class="sm:w-[55%] text-white flex flex-col justify-center">
+                <div class="sm:w-[58%] text-white">
                     <h3 class="text-lg sm:text-xl font-bold">Varkala Beach</h3>
-                    <p class="text-emerald-400 text-xs mb-2">Cliffside Paradise</p>
-                    <div class="grid grid-cols-2 gap-1.5 text-xs">
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🌡️</span> 28-33°C</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>📅</span> Oct-Mar</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🍽️</span> Grilled Seafood</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🎯</span> Yoga, Parasailing</div>
+                    <p class="text-emerald-400 text-xs mb-2">Cliffside Paradise · Spiritual Haven</p>
+                    <div class="flex gap-2 text-xs mb-2">
+                        <span class="bg-white/5 px-2 py-1 rounded-lg">🌡️ 28°-33°C</span>
+                        <span class="bg-white/5 px-2 py-1 rounded-lg">📅 Best: Oct-Mar</span>
                     </div>
+                    <p class="text-emerald-400 text-xs font-semibold mt-2">🍽️ Must Try:</p>
+                    <p class="text-gray-300 text-xs leading-relaxed">Grilled Seafood at cliff-top cafes, Fish Moilee (coconut fish curry), Kerala Prawn Curry, Avial (mixed vegetable coconut dish), Palada Payasam (rice pudding).</p>
+                    <p class="text-emerald-400 text-xs font-semibold mt-2">🎯 Activities:</p>
+                    <p class="text-gray-300 text-xs leading-relaxed">Join seaside yoga on dramatic red laterite cliffs with the Arabian Sea stretching before you, parasail over turquoise waters, and visit the ancient Janardhana Swamy Temple.</p>
                 </div>
             </div>
         </div>
 
         <!-- Card 4: Wayanad -->
-        <div class="slider-card w-full flex-shrink-0 px-3">
-            <div class="dest-card glass-panel rounded-3xl overflow-hidden group p-3 sm:p-4 flex flex-col sm:flex-row gap-3 sm:gap-4 bg-emerald-950/30 border border-emerald-800/30">
-                <div class="sm:w-[45%] overflow-hidden rounded-2xl relative flex-shrink-0 h-44 sm:h-auto">
+        <div class="slider-card w-full flex-shrink-0 px-2">
+            <div class="dest-card glass-panel rounded-3xl p-4 sm:p-5 flex flex-col sm:flex-row gap-4 bg-emerald-950/30 border border-emerald-800/30 max-w-3xl mx-auto">
+                <div class="sm:w-[42%] overflow-hidden rounded-2xl relative flex-shrink-0 h-48 sm:h-auto">
                     <img src="https://i.ibb.co/pB49DFRM/99013a0c42fa4ef6c0101e0e97718eeb.jpg" alt="Wayanad" class="w-full h-full object-cover">
                     <span class="absolute top-3 left-3 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">#4</span>
                 </div>
-                <div class="sm:w-[55%] text-white flex flex-col justify-center">
+                <div class="sm:w-[58%] text-white">
                     <h3 class="text-lg sm:text-xl font-bold">Wayanad</h3>
-                    <p class="text-emerald-400 text-xs mb-2">Forest Paradise</p>
-                    <div class="grid grid-cols-2 gap-1.5 text-xs">
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🌡️</span> 18-25°C</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>📅</span> Oct-Feb</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🍽️</span> Puttu & Kadala Curry</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🎯</span> Edakkal Caves, Safari</div>
+                    <p class="text-emerald-400 text-xs mb-2">Forest Paradise · Spice Country</p>
+                    <div class="flex gap-2 text-xs mb-2">
+                        <span class="bg-white/5 px-2 py-1 rounded-lg">🌡️ 18°-25°C</span>
+                        <span class="bg-white/5 px-2 py-1 rounded-lg">📅 Best: Oct-Feb</span>
                     </div>
+                    <p class="text-emerald-400 text-xs font-semibold mt-2">🍽️ Must Try:</p>
+                    <p class="text-gray-300 text-xs leading-relaxed">Bamboo Rice Payasam, Puttu with Kadala Curry, Karimeen Fry, Wayanadan Kozhi Curry (chicken), Ela Ada (leaf-wrapped sweet).</p>
+                    <p class="text-emerald-400 text-xs font-semibold mt-2">🎯 Activities:</p>
+                    <p class="text-gray-300 text-xs leading-relaxed">Trek through misty forests to ancient Edakkal Caves with 6000-year-old petroglyphs, embark on a wildlife safari, and visit the stunning Banasura Sagar Dam surrounded by mountains.</p>
                 </div>
             </div>
         </div>
 
         <!-- Card 5: Kochi -->
-        <div class="slider-card w-full flex-shrink-0 px-3">
-            <div class="dest-card glass-panel rounded-3xl overflow-hidden group p-3 sm:p-4 flex flex-col sm:flex-row gap-3 sm:gap-4 bg-emerald-950/30 border border-emerald-800/30">
-                <div class="sm:w-[45%] overflow-hidden rounded-2xl relative flex-shrink-0 h-44 sm:h-auto">
+        <div class="slider-card w-full flex-shrink-0 px-2">
+            <div class="dest-card glass-panel rounded-3xl p-4 sm:p-5 flex flex-col sm:flex-row gap-4 bg-emerald-950/30 border border-emerald-800/30 max-w-3xl mx-auto">
+                <div class="sm:w-[42%] overflow-hidden rounded-2xl relative flex-shrink-0 h-48 sm:h-auto">
                     <img src="https://i.ibb.co/xKLTfLjc/d5b841550b34f37e0af86186cb6c3bca.jpg" alt="Kochi" class="w-full h-full object-cover">
                     <span class="absolute top-3 left-3 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">#5</span>
                 </div>
-                <div class="sm:w-[55%] text-white flex flex-col justify-center">
+                <div class="sm:w-[58%] text-white">
                     <h3 class="text-lg sm:text-xl font-bold">Kochi</h3>
-                    <p class="text-emerald-400 text-xs mb-2">Queen of Arabian Sea</p>
-                    <div class="grid grid-cols-2 gap-1.5 text-xs">
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🌡️</span> 28-35°C</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>📅</span> Oct-Mar</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🍽️</span> Malabar Biryani</div>
-                        <div class="bg-white/5 rounded-lg px-2 py-1.5 flex items-center gap-1"><span>🎯</span> Fort Kochi, Kathakali</div>
+                    <p class="text-emerald-400 text-xs mb-2">Queen of Arabian Sea · Cultural Hub</p>
+                    <div class="flex gap-2 text-xs mb-2">
+                        <span class="bg-white/5 px-2 py-1 rounded-lg">🌡️ 28°-35°C</span>
+                        <span class="bg-white/5 px-2 py-1 rounded-lg">📅 Best: Oct-Mar</span>
                     </div>
+                    <p class="text-emerald-400 text-xs font-semibold mt-2">🍽️ Must Try:</p>
+                    <p class="text-gray-300 text-xs leading-relaxed">Malabar Biryani, Meen Curry (spicy fish curry), Koonthal Roast (squid), Pazham Pori (banana fritters), Sulaimani Tea.</p>
+                    <p class="text-emerald-400 text-xs font-semibold mt-2">🎯 Activities:</p>
+                    <p class="text-gray-300 text-xs leading-relaxed">Explore Fort Kochi's colonial streets, watch Chinese fishing nets at sunset, experience a live Kathakali dance performance, and wander through fragrant spice markets in Mattancherry.</p>
                 </div>
             </div>
         </div>
@@ -484,6 +499,50 @@ body::before {
     </div>
 </div>
 </section>
+
+<style>
+    .slider-card {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.6s ease;
+    }
+    #sliderContainer {
+        height: 350px;
+        position: relative;
+    }
+    @media (min-width: 640px) {
+        #sliderContainer { height: 340px; }
+    }
+    @media (max-width: 639px) {
+        #sliderContainer { height: 460px; }
+    }
+</style>
+
+<script>
+    const cards = document.querySelectorAll('.slider-card');
+    let currentSlide = 0;
+    const totalSlides = 5;
+
+    function slide() {
+        cards[currentSlide].style.opacity = '0';
+        cards[currentSlide].style.transform = 'scale(0.95)';
+        cards[currentSlide].style.zIndex = '0';
+        currentSlide = (currentSlide + 1) % totalSlides;
+        cards[currentSlide].style.opacity = '1';
+        cards[currentSlide].style.transform = 'scale(1)';
+        cards[currentSlide].style.zIndex = '10';
+    }
+
+    cards.forEach((c, i) => {
+        c.style.transition = 'all 0.6s ease';
+        if (i !== 0) { c.style.opacity = '0'; c.style.transform = 'scale(0.95)'; }
+    });
+    cards[0].style.zIndex = '10';
+
+    setInterval(slide, 4000);
+</script>
 
 <style>
     .slider-card {
