@@ -947,15 +947,13 @@ body::before {
 </script>
 <script>
     const heroSection = document.getElementById('home');
-    const prevBtn = document.getElementById('prevBg');
-    const nextBtn = document.getElementById('nextBg');
 
     const bgImages = [
         'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2070&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1593693411515-c54861a1091f?q=80&w=2070&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1589985270954-3b27c3493a90?q=80&w=2070&auto=format&fit=crop',
-        'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2070&auto=format&fit=crop'
+        'https://i.ibb.co/sJQSXy3H/4cd4f55870d64f1378b0f67c585b780b.jpg',
+        'https://i.ibb.co/WN7DNRyt/35e2e192a356ab7966887cddc2c09795.jpg',
+        'https://i.ibb.co/tPbdwpjq/a7c2029d2c86c07ada5256d02fb722f4.jpg',
+        'https://i.ibb.co/j2YDSR9/266457522b5e0411eff480ee34c49c98.jpg'
     ];
 
     let bgIndex = 0;
@@ -963,17 +961,9 @@ body::before {
     function changeBg(index) {
         bgIndex = index;
         heroSection.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
+        heroSection.style.backgroundSize = 'cover';
+        heroSection.style.backgroundPosition = 'center';
     }
-
-    nextBtn.addEventListener('click', () => {
-        bgIndex = (bgIndex + 1) % bgImages.length;
-        changeBg(bgIndex);
-    });
-
-    prevBtn.addEventListener('click', () => {
-        bgIndex = (bgIndex - 1 + bgImages.length) % bgImages.length;
-        changeBg(bgIndex);
-    });
 
     setInterval(() => {
         bgIndex = (bgIndex + 1) % bgImages.length;
