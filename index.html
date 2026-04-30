@@ -319,11 +319,18 @@ body::before {
 </div>
 </nav>
     <!-- ==================== HERO SECTION ==================== -->
-    <section id="home" class="hero-section relative w-full min-h-screen flex items-center justify-center overflow-hidden"
-    style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center 35%;">
+<section id="home" class="hero-section relative w-full min-h-screen flex items-center justify-center overflow-hidden" style="background-image: url('https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center 35%;">
     <!-- Dark artistic overlay -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40"></div>
+
+    <!-- Arrow buttons -->
+    <button id="prevBg" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 text-white text-3xl opacity-50 hover:opacity-100 transition">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button id="nextBg" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 text-white text-3xl opacity-50 hover:opacity-100 transition">
+        <i class="fas fa-chevron-right"></i>
+    </button>
 
     <div class="relative z-10 w-full max-w-7xl mx-auto px-6 pt-12 pb-12 flex flex-col items-start text-left">
 
@@ -937,6 +944,41 @@ body::before {
             menuIcon.classList.add('fa-bars');
         });
     });
+</script>
+<script>
+    const heroSection = document.getElementById('home');
+    const prevBtn = document.getElementById('prevBg');
+    const nextBtn = document.getElementById('nextBg');
+
+    const bgImages = [
+        'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2070&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1593693411515-c54861a1091f?q=80&w=2070&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1589985270954-3b27c3493a90?q=80&w=2070&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=2070&auto=format&fit=crop'
+    ];
+
+    let bgIndex = 0;
+
+    function changeBg(index) {
+        bgIndex = index;
+        heroSection.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        bgIndex = (bgIndex + 1) % bgImages.length;
+        changeBg(bgIndex);
+    });
+
+    prevBtn.addEventListener('click', () => {
+        bgIndex = (bgIndex - 1 + bgImages.length) % bgImages.length;
+        changeBg(bgIndex);
+    });
+
+    setInterval(() => {
+        bgIndex = (bgIndex + 1) % bgImages.length;
+        changeBg(bgIndex);
+    }, 5000);
 </script>
 </body>
 </html>
