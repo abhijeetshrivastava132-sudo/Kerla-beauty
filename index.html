@@ -363,12 +363,7 @@ body::before {
         </div>
     </div>
 
-    <!-- Page indicator -->
-    <div class="absolute bottom-8 right-8 text-gray-500 text-sm font-mono hidden md:block">
-        <span class="text-emerald-500 text-lg font-bold">01</span> / 05
-    </div>
-</section>
-<section id="map-section" style="
+    <section id="map-section" style="
   padding: 80px 20px;
   font-family: inherit;
 ">
@@ -387,7 +382,6 @@ body::before {
       box-shadow: 0 25px 60px rgba(0,0,0,0.5);
     "></div>
 
-    <!-- Destination legend -->
     <div id="map-legend" style="
       display: flex;
       flex-wrap: wrap;
@@ -398,7 +392,6 @@ body::before {
   </div>
 </section>
 
-<!-- 3. Map initialization script — place before </body> -->
 <script>
 (function() {
   const destinations = [
@@ -411,7 +404,7 @@ body::before {
       tagline: "Venice of the East · Houseboat Paradise",
       temp: "25°–32°C",
       best: "Nov–Feb",
-      anchor: "#alleppey" // change to match your section IDs
+      anchor: "#alleppeyGallery"
     },
     {
       name: "Munnar Hills",
@@ -422,7 +415,7 @@ body::before {
       tagline: "Tea Garden Paradise · Misty Mountains",
       temp: "15°–22°C",
       best: "Oct–Mar",
-      anchor: "#munnar"
+      anchor: "#munnarGallery"
     },
     {
       name: "Varkala Beach",
@@ -433,7 +426,7 @@ body::before {
       tagline: "Cliffside Paradise · Spiritual Haven",
       temp: "28°–33°C",
       best: "Oct–Mar",
-      anchor: "#varkala"
+      anchor: "#varkalaGallery"
     },
     {
       name: "Wayanad",
@@ -444,7 +437,7 @@ body::before {
       tagline: "Forest Paradise · Spice Country",
       temp: "18°–25°C",
       best: "Oct–Feb",
-      anchor: "#wayanad"
+      anchor: "#wayanadGallery"
     },
     {
       name: "Kochi",
@@ -455,30 +448,26 @@ body::before {
       tagline: "Queen of Arabian Sea · Cultural Hub",
       temp: "28°–35°C",
       best: "Oct–Mar",
-      anchor: "#kochi"
+      anchor: "#kochiGallery"
     }
   ];
 
-  // Init map centered on Kerala
   const map = L.map('kerala-map', {
     center: [10.1, 76.6],
     zoom: 7,
     zoomControl: true,
-    scrollWheelZoom: false // better UX on scroll-heavy pages
+    scrollWheelZoom: false
   });
 
-  // Dark map tiles (fits your site's dark theme)
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
     subdomains: 'abcd',
     maxZoom: 19
   }).addTo(map);
 
-  // Build legend
   const legend = document.getElementById('map-legend');
 
   destinations.forEach(dest => {
-    // Custom SVG pin marker
     const pinSvg = `
       <svg xmlns="http://www.w3.org/2000/svg" width="36" height="46" viewBox="0 0 36 46">
         <filter id="shadow">
@@ -502,20 +491,10 @@ body::before {
 
     const marker = L.marker([dest.lat, dest.lng], { icon }).addTo(map);
 
-    // Popup content
     const popupHtml = `
-      <div style="
-        font-family: inherit;
-        min-width: 200px;
-        padding: 4px;
-      ">
+      <div style="font-family: inherit; min-width: 200px; padding: 4px;">
         <div style="font-size: 1.4rem; margin-bottom: 4px;">${dest.emoji}</div>
-        <h3 style="
-          margin: 0 0 4px;
-          color: ${dest.color};
-          font-size: 1rem;
-          font-weight: 700;
-        ">${dest.name}</h3>
+        <h3 style="margin: 0 0 4px; color: ${dest.color}; font-size: 1rem; font-weight: 700;">${dest.name}</h3>
         <p style="margin: 0 0 8px; font-size: 0.75rem; color: #888; font-style: italic;">${dest.tagline}</p>
         <div style="display:flex; gap: 10px; font-size: 0.78rem; color: #555; margin-bottom: 10px;">
           <span>🌡️ ${dest.temp}</span>
@@ -542,10 +521,8 @@ body::before {
       className: 'kerala-popup'
     });
 
-    // Hover to open popup
     marker.on('mouseover', function() { this.openPopup(); });
 
-    // Legend pill
     const pill = document.createElement('button');
     pill.innerHTML = `${dest.emoji} ${dest.name.split(' ')[0]}`;
     pill.style.cssText = `
@@ -568,7 +545,6 @@ body::before {
     legend.appendChild(pill);
   });
 
-  // Popup style override
   const style = document.createElement('style');
   style.textContent = `
     .kerala-popup .leaflet-popup-content-wrapper {
